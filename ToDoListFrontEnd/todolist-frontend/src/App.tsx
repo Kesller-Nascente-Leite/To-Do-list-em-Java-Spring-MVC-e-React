@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Task } from "./types/Task.ts";
 import {
   createTask,
+  deleteTask,
   editTask,
   fetchTask,
   isCompletedTask,
@@ -63,6 +64,13 @@ export function App() {
       .then(setTask)
       .catch((err) => setError(err.message));
   }
+
+  function handleDeleteTask(id: number) {
+    deleteTask(id)
+      .then(() => fetchTask())
+      .then(setTask)
+      .catch((err) => setError(err.message));
+  }
   return (
     <div className="bg-gray-400 py-4 min-h-screen text-white">
       <h1 className="text-center max-h-5 p-9">Minha To-Do List</h1>
@@ -86,6 +94,7 @@ export function App() {
             tasks={tasks}
             onToggle={handleToggleStatus}
             onEdit={openEditModal}
+            onDelete={handleDeleteTask}
           />
         </div>
 

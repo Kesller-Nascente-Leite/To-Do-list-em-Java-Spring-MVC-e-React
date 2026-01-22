@@ -4,9 +4,10 @@ interface Props {
   tasks: Task[];
   onToggle: (id: number) => void;
   onEdit: (task: Task) => void;
+  onDelete: (id: number) => void;
 }
 
-export function TaskList({ tasks, onToggle, onEdit }: Props) {
+export function TaskList({ tasks, onToggle, onEdit, onDelete }: Props) {
   return (
     <div className="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
       <table className="min-w-full divide-y divide-gray-200 bg-white text-sm">
@@ -56,7 +57,10 @@ export function TaskList({ tasks, onToggle, onEdit }: Props) {
                 >
                   Editar
                 </button>
-                <button className="text-red-500 hover:text-red-700">
+                <button
+                  onClick={() => task.id && onDelete(task.id)}
+                  className="text-red-500 hover:text-red-700"
+                >
                   Excluir
                 </button>
               </td>

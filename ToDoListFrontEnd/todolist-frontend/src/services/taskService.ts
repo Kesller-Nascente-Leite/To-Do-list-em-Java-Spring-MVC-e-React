@@ -67,3 +67,17 @@ export async function isNotCompletedTask(id: number): Promise<void> {
   }
   return response.json();
 }
+
+export async function deleteTask(id: number): Promise<void> {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (!response.ok) {
+    throw new Error("Erro ao deletar tarefa");
+  }
+  //Não deve retornar nada
+  return;
+}
