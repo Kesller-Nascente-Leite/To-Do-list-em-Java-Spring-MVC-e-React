@@ -1,5 +1,5 @@
 export interface Task{
-    id: number;
-    todo:String;
-    completed:Boolean
+    id?: number;
+    todo:string;
+    completed:boolean
 }

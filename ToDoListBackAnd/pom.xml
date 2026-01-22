@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.minhaurl</groupId>
-    <artifactId>ToDoListBackEnd</artifactId>
+    <artifactId>ToDoListBackAnd</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ToDoListBackAnd</name>
     <description>ToDoListBackAnd</description>
